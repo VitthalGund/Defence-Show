@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: #fff;
+  font-family: "Figtree", sans-serif;
+  background: linear-gradient(0deg, #121212 0%, #1e1e1e 100%);
+}
+
+.containerScroll {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.carousel {
+  padding: 4px;
+}
+.carousel h2 {
+  margin: 0;
+}
+.carousel .carousel__wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+@media only screen and (min-width: 1180px) {
+  .carousel .carousel__wrapper.has-arrows .carousel__content {
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1180px) {
+  .carousel .carousel__wrapper.has-arrows .carousel__arrows {
+    display: flex;
+  }
+}
+.carousel .carousel__header {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.carousel .carousel__content {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: grid;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  padding: 0;
+  margin: 0;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+  list-style: none;
+}
+.carousel .carousel__content::-webkit-scrollbar {
+  display: none;
+}
+.carousel .carousel__item .carousel__description {
+  width: 100%;
+}
+.carousel .carousel__item {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  user-select: none;
+  margin: 10px 0px;
+  padding: 5px;
+  border-radius: 4px;
+  background: #181818;
+  /* background: #d50101; */
+  border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 8px);
+  cursor: pointer;
+}
+.carousel .carousel__controls {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 24px;
+}
+.carousel .carousel__arrow {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+.carousel .carousel__arrow:before {
+  content: "";
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTUgOSI+Cgk8cGF0aCBmaWxsPSIjMzMzMzMzIiBkPSJNNy44NjcgOC41NzRsLTcuMjItNy4yMi43MDctLjcwOEw3Ljg2NyA3LjE2IDE0LjA1Ljk4bC43MDYuNzA3Ii8+Cjwvc3ZnPgo=");
+  background-size: contain;
+  filter: brightness(5);
+  display: block;
+  width: 18px;
+  height: 12px;
+  cursor: pointer;
+}
+.carousel .carousel__arrow.arrow-prev:before {
+  transform: rotate(90deg);
+}
+.carousel .carousel__arrow.arrow-next:before {
+  transform: rotate(-90deg);
+}
+.carousel .carousel__arrow.disabled::before {
+  filter: brightness(2);
+}

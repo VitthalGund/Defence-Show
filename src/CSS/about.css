@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --color-text: rgb(255, 255, 255);
+  --color-back: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+AboutUS {
+  margin: 0px;
+  font-family: "segoe ui";
+  color: var(--color-text);
+  overflow-y: scroll;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ddd;
+}
+
+/* Background video CSS*/
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Background Video */
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.contentAbout {
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  margin-top: 2%;
+  padding: 80px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* contents css */
+#pic {
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 120%;
+  left: 680px;
+}
+
+#element {
+  padding: 15px 15px;
+}

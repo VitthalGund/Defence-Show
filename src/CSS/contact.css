@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+  --color-text: orange;
+  --color-back: rgb(255, 255, 255);
+}
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+*::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+}
+
+.mainform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5cqi;
+  overflow: hidden;
+}
+.contents {
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 0px;
+}
+@media (max-width: 1000px) {
+  .mainform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25cqi;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1450px) {
+  .mainform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7cqi;
+    overflow: hidden;
+  }
+}
+
+/* Background video CSS*/
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ddd;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  overflow: hidden;
+}
+/* Background Video */
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Form CSS */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+.container .title::before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  /* width: calc(100% / 2 - 20px); */
+}
+form .input-box span.detail {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+#des {
+  display: block;
+  font-weight: 500 bold;
+  margin-bottom: 5px;
+}
+.user-details .input-box input,
+textarea {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 2px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.input-box textarea:is(:focus, :valid) {
+  border: 2px solid #ffb300;
+  border-bottom-width: 2px;
+  border-color: #ffaa00;
+}
+.user-details .input-box input:is(:valid, :focus) {
+  color: whitesmoke;
+  border-color: #ffaa00;
+}
+form .gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  margin: 5px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+  background: #ffc400;
+  border-color: #d9d9d9;
+}
+form input {
+  color: whitesmoke;
+  background-color: rgb(6, 5, 5);
+}
+form input[type="radio"] {
+  display: none;
+}
+form input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+form .button input {
+  /* height: 100%;
+  width: 100%; */
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+form .button input:hover {
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  color: orange;
+}
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+@media (max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
