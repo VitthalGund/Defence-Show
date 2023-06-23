@@ -1,9 +1,8 @@
 import React from 'react'
-import "../CSS/scroll.css"
+import "../css/scroll.css"
 
 // reference:https://codepen.io/samwong/pen/xxJMaMP
-
-export default function ScrollVideo() {
+export default function ScrollVideo(props) {
     window.addEventListener("load", () => {
         const COMPONENT_SELECTOR = ".carousel__wrapper";
         const CONTROLS_SELECTOR = ".carousel__controls";
@@ -108,7 +107,6 @@ export default function ScrollVideo() {
             content.addEventListener("mouseleave", mouseupHandler);
         }
     });
-
     return (
         <>
             <div className="containerScroll">
@@ -124,50 +122,55 @@ export default function ScrollVideo() {
                         </div>
                         <ul className="carousel__content">
                             <li className="carousel__item">
-                                <iframe height={250} width={320} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ"
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=1"
                                     title="YouTube video player"
-                                    allowFullScreen>
+                                    allowFullScreen loading='lazy'></iframe>
+                            </li>
+                            <li className="carousel__item">
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=2"
+                                    title="YouTube video player"
+                                    allowFullScreen loading='lazy'></iframe>
+                            </li>
+                            <li className="carousel__item">
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=3"
+                                    title="YouTube video player"
+                                    allowFullScreen loading='lazy'>
                                 </iframe>
                             </li>
                             <li className="carousel__item">
-                                <iframe height={250} width={320} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=2"
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=4"
                                     title="YouTube video player"
-                                    allowFullScreen></iframe>
-                            </li>
-                            <li className="carousel__item">
-                                <iframe height={250} width={320} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=3"
-                                    title="YouTube video player"
-                                    allowFullScreen>
+                                    allowFullScreen loading='lazy'>
                                 </iframe>
                             </li>
                             <li className="carousel__item">
-                                <iframe height={250} width={320} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=4"
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=5"
                                     title="YouTube video player"
-                                    allowFullScreen>
+                                    allowFullScreen loading='lazy'>
                                 </iframe>
                             </li>
                             <li className="carousel__item">
-                                <iframe height={250} width={320} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=5"
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=6"
                                     title="YouTube video player"
-                                    allowFullScreen>
+                                    allowFullScreen loading='lazy'>
                                 </iframe>
                             </li>
                             <li className="carousel__item">
-                                <iframe height={250} width={320} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=6"
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=7"
                                     title="YouTube video player"
-                                    allowFullScreen>
+                                    allowFullScreen loading='lazy'>
                                 </iframe>
                             </li>
                             <li className="carousel__item">
-                                <iframe height={250} width={320} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=7"
+                                <iframe height={250} width={350} src="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=7"
                                     title="YouTube video player"
-                                    allowFullScreen>
+                                    allowFullScreen loading='lazy'>
                                 </iframe>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div >
+            </div>
         </>
     )
 }

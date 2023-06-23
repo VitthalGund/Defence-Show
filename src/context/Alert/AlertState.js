@@ -14,11 +14,9 @@ const AlertState = (props) => {
         }, 2000);
     }
     return (
-        <>
-            <AlertContext.Provider value={{ alert, displayAlert }}>
-                {props.children}
-            </AlertContext.Provider>
-        </>
+        <AlertContext.Provider value={{ alert, displayAlert }}>
+            {props.children}
+        </AlertContext.Provider>
     )
 }
 export default AlertState;

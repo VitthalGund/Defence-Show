@@ -1,45 +1,24 @@
-import React from 'react'
-import "../CSS/footer.css"
+import React, { useContext } from 'react'
+import "../css/footer.css"
 import { Link } from "react-router-dom";
 import { useState } from 'react';
+import Alert from "./Alert"
+import AlertContext from '../context/Alert/useContext';
 
 function Footer() {
-
     const [email, setEmail] = useState("");
-    function create(htmlStr) {
-        var frag = document.createDocumentFragment(),
-            temp = document.createElement('div');
-        temp.innerHTML = htmlStr;
-        while (temp.firstChild) {
-            frag.appendChild(temp.firstChild);
-        }
-        return frag;
-    }
-
-    const alert = (message, type = 'success', id = "Alert", time = 3000) => {
-        let fragment = create(`<div class="alert mb-0 alert-${type} alert-dismissible z-3" id='message' role="alert">
-            <div>${message}</div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>`);
-        document.getElementById(id).appendChild(fragment);
-        setTimeout(() => {
-            if (document.getElementById('message') !== null) {
-                document.getElementById(id).removeChild(document.getElementById('message'));
-            }
-        }, time);
-    }
+    const { displayAlert } = useContext(AlertContext);
     const validateEmail = (email) => {
-        return String(email)
-            .toLowerCase()
+        return String(email).toLowerCase()
             .match(
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             );
     };
     const SubcribeService = () => {
         if (validateEmail(email)) {
-            alert("Thanks for Subscribing to our Services")
+            displayAlert("Thanks for Subscribing to our Services", "success")
         } else {
-            alert("Invalid Email!", "danger")
+            displayAlert("Invalid Email!", "danger")
         }
     }
 
@@ -89,7 +68,7 @@ function Footer() {
                     <div className="column subscribe">
                         <h2>Subscribe</h2>
                         <div>
-                            <div id="Alert" style={{ zIndex: 10 }}></div>
+                            <Alert />
                             <input type="email" required placeholder="Your email id here" value={email} onChange={(e) => setEmail(e.target.value)} id="element" />
                             <button type="button" id="btnsubmit" onClick={SubcribeService} >Subscribe</button>
                         </div>
@@ -97,9 +76,9 @@ function Footer() {
                 </div>
                 <div className="row copyright">
                     <span className="footer-menu">
-                        <Link href="/about.html">About</Link>
-                        <Link href="/contact.html">Contact</Link>
-                        <Link href="https://www.youtube.com/@defenceshort1/">Social</Link>
+                        <Link to="/about">About</Link>
+                        <Link to="/contact">Contact</Link>
+                        <Link to="https://www.youtube.com/@defenceshort1/" target='_blank'>Social</Link>
                     </span>
                     <p id="copy" className="copyright">Copyright &copy; 2022 Defence Shorts</p>
                 </div>
@@ -108,4 +87,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Footer;

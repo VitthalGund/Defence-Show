@@ -17,7 +17,7 @@ footer {
   font-size: 16px;
 }
 footer * {
-  font-family: "Poppins", sans-serif;
+  font-family: Ubuntu-Bold, "Poppins", sans-serif;
   box-sizing: border-box;
   border: none;
   outline: none;
@@ -78,7 +78,7 @@ button {
   border-radius: 5px;
   margin-bottom: 5px;
 }
-button {
+#btnsubmit {
   background-color: #c7940a;
   color: #ffffff;
 }

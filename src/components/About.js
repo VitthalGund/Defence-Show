@@ -1,11 +1,9 @@
 import React from 'react'
-import "../CSS/about.css"
-import BackVideo from './BackVideo'
-
+import "../css/about.css"
 function About() {
+    document.title = "About | Defence Shorts"
     return (
         <>
-            <BackVideo />
             <main className='AboutUS'>
                 <div className="contentAbout">
                     <h3>Defence Show</h3>

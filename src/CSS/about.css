@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Ubuntu-Bold, "Poppins", sans-serif;
 }
 :root {
   --color-text: rgb(255, 255, 255);

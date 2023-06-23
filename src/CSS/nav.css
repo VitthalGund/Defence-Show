@@ -3,7 +3,7 @@
 }
 :root {
   --color-text: orange;
-  --color-back: black;
+  --color-back: rgb(158, 114, 114);
 }
 
 *::-webkit-scrollbar {
@@ -19,6 +19,7 @@
   display: block;
   top: 0;
   z-index: 5;
+  font-family: Ubuntu-Bold, "Courier New", Courier, monospace;
 }
 
 .nav > .nav-header {
@@ -87,6 +88,11 @@
   width: 100%;
 }
 
+.nav-link-ltr-location:before {
+  width: 100%;
+  color: rgb(255, 115, 0);
+}
+
 .nav-link-fade-up::before {
   width: 90%;
   bottom: 5px;
@@ -102,11 +108,11 @@
   display: none;
 }
 
-.nav-titleN {
+.nav-heading {
   display: inline-block;
   font-size: 22px;
   color: var(--color-text);
-  padding: 15px 5px 10px 0px;
+  padding: 11px 5px 10px 0px;
   position: absolute;
   left: 30px;
 }
@@ -155,8 +161,13 @@
     height: 0px;
   }
   .nav > #nav-check:checked ~ .nav-links {
-    height: 280px;
+    height: 300px;
     overflow-y: auto;
     background-color: whitesmoke;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    /* padding-left: 20px; */
   }
 }

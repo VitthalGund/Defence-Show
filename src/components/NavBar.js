@@ -1,9 +1,45 @@
-import "../CSS/nav.css";
-import * as React from "react";
-import { Link } from "react-router-dom";
+import "../css/nav.css";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../source/IMG/logo.jpg";
 
-function NavBar() {
+window.addEventListener("resize", () => {
+  if (window.screen.width <= 710) {
+    document.body.querySelectorAll('.nav-link').forEach((item) => {
+      item.classList.remove("nav-link-ltr")
+    })
+  } else {
+    document.body.querySelectorAll('.nav-link').forEach((item) => {
+      item.classList.add("nav-link-ltr")
+    })
+  }
+});
+export default function NavBar() {
+  let location = useLocation();
+  useEffect(() => {
+    if (window.screen.width > 710) {
+      if (location.pathname === "/") {
+        document.getElementById("home").classList.add("nav-link-ltr-location");
+      }
+      else if (location.pathname === "/about") {
+        document.getElementById("about").classList.add("nav-link-ltr-location");
+      }
+      else if (location.pathname === "/contact") {
+        document.getElementById("contact").classList.add("nav-link-ltr-location");
+      }
+      else {
+        document.getElementById("blogs").classList.add("nav-link-ltr-location");
+      }
+    }
+    return () => {
+      if (window.screen.width > 710) {
+        document.getElementById("home").classList.remove("nav-link-ltr-location");
+        document.getElementById("about").classList.remove("nav-link-ltr-location");
+        document.getElementById("contact").classList.remove("nav-link-ltr-location");
+        document.getElementById("blogs").classList.remove("nav-link-ltr-location");
+      }
+    }
+  }, [location])
   return (
     <>
       <nav>
@@ -22,11 +58,10 @@ function NavBar() {
                 }}
               />
             </div>
-            <div className="nav-titleN nav-link" style={{ background: "" }}>Defence Shorts</div>
+            <div className="nav-heading nav-link" style={{ background: "" }}>Defence Shorts</div>
           </div>
           <div className="nav-btn">
             <label htmlFor="nav-check">
-              <span></span>
               <span></span>
               <span></span>
               <span></span>
@@ -34,10 +69,10 @@ function NavBar() {
           </div>
 
           <div className="nav-links">
-            <Link to="/" className="nav-link nav-link-ltr">
+            <Link to="/" id="home" className="nav-link nav-link-ltr" >
               Home
             </Link>
-            <Link to="/about" className="nav-link nav-link-ltr">
+            <Link to="/about" id="about" className="nav-link nav-link-ltr">
               About
             </Link>
             <Link
@@ -48,10 +83,10 @@ function NavBar() {
             >
               YouTube
             </Link>
-            <Link to="/contact" className="nav-link nav-link-ltr">
+            <Link to="/contact" id="contact" className="nav-link nav-link-ltr" >
               Contact
             </Link>
-            <Link to="/blogs" className="nav-link nav-link-ltr">
+            <Link to="/blogs" id="blogs" className="nav-link nav-link-ltr" >
               Blogs
             </Link>
           </div>
@@ -60,5 +95,3 @@ function NavBar() {
     </>
   );
 }
-
-export default NavBar;

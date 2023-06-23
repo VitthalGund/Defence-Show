@@ -1,17 +1,15 @@
 import React from 'react'
-import "../CSS/main.css"
-import BackVideo from './BackVideo';
+import "../css/main.css"
 import ScrollVideo from './ScrollVideo';
 
-function MainPage() {
-
+export default function MainPage() {
+    document.title = "Home | Defence Shorts"
     return (
         <>
-            <BackVideo />
             <main>
                 <div className="content">
                     {/* <h2></h2> */}
-                    <p style={{ margin: "30px" }}>
+                    <p style={{ margin: "40px" }}>
                         नमस्ते, मे Defence Show पर आपका स्वागत करता हुँ मे इस Youtube Channel पर Defence
                         से जुडी 2-3 Videos
                         Upload करता हूँ
@@ -22,11 +20,9 @@ function MainPage() {
                         Bell Icon को दबाए और Defence Short को Support करके Defence Short Family का Part बने
                         धन्यवाद आपका दिन सुभ हो|
                     </p>
-                    <ScrollVideo />
+                    <ScrollVideo links="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=" />
                 </div>
             </main >
         </>
     )
 }
-
-export default MainPage;

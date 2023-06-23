@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  font-family: "segoe ui";
+  font-family: Ubuntu-Bold, "segoe ui";
   color: var(--color-text);
   overflow-y: scroll;
   padding: 0;
@@ -15,7 +15,7 @@ body {
   color: var(--color-back);
   width: 100%;
   margin-top: 3%;
-  padding: 20px;
+  padding: 10px;
   text-transform: uppercase;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

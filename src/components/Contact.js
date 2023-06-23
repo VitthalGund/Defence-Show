@@ -2,7 +2,7 @@ import React from 'react'
 import "../CSS/contact.css"
 import BackVideo from './BackVideo'
 
-function Contact() {
+export default function Contact() {
     return (
         <>
             <BackVideo />
@@ -59,4 +59,3 @@ function Contact() {
         </>
     )
 }
-export default Contact
