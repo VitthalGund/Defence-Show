@@ -1,10 +1,12 @@
 import "../css/nav.css";
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../source/IMG/logo.jpg";
+import AuthenticationContext from "../context/Auth/useContext";
+import "../css/button.css"
 
 window.addEventListener("resize", () => {
-  if (window.screen.width <= 710) {
+  if (window.screen.width <= 860) {
     document.body.querySelectorAll('.nav-link').forEach((item) => {
       item.classList.remove("nav-link-ltr")
     })
@@ -16,8 +18,10 @@ window.addEventListener("resize", () => {
 });
 export default function NavBar() {
   let location = useLocation();
+  const redirect = useNavigate();
+  const { verifyLogin } = useContext(AuthenticationContext);
   useEffect(() => {
-    if (window.screen.width > 710) {
+    if (window.screen.width > 860) {
       if (location.pathname === "/") {
         document.getElementById("home").classList.add("nav-link-ltr-location");
       }
@@ -27,16 +31,16 @@ export default function NavBar() {
       else if (location.pathname === "/contact") {
         document.getElementById("contact").classList.add("nav-link-ltr-location");
       }
-      else {
+      else if (location.pathname === "/blogs") {
         document.getElementById("blogs").classList.add("nav-link-ltr-location");
       }
     }
     return () => {
-      if (window.screen.width > 710) {
-        document.getElementById("home").classList.remove("nav-link-ltr-location");
-        document.getElementById("about").classList.remove("nav-link-ltr-location");
-        document.getElementById("contact").classList.remove("nav-link-ltr-location");
-        document.getElementById("blogs").classList.remove("nav-link-ltr-location");
+      if (window.screen.width > 860) {
+        document.getElementById("home").classList?.remove("nav-link-ltr-location");
+        document.getElementById("about").classList?.remove("nav-link-ltr-location");
+        document.getElementById("contact").classList?.remove("nav-link-ltr-location");
+        document.getElementById("blogs").classList?.remove("nav-link-ltr-location");
       }
     }
   }, [location])
@@ -69,26 +73,24 @@ export default function NavBar() {
           </div>
 
           <div className="nav-links">
-            <Link to="/" id="home" className="nav-link nav-link-ltr" >
-              Home
-            </Link>
-            <Link to="/about" id="about" className="nav-link nav-link-ltr">
-              About
-            </Link>
+            <Link to="/" id="home" className="nav-link nav-link-ltr" >Home</Link>
+            <Link to="/about" id="about" className="nav-link nav-link-ltr">About</Link>
             <Link
               to="https://www.youtube.com/@defenceshort1/"
               target="_blank"
               style={{ color: "red" }}
               className="nav-link nav-link-ltr"
-            >
-              YouTube
-            </Link>
+            >YouTube</Link>
             <Link to="/contact" id="contact" className="nav-link nav-link-ltr" >
               Contact
             </Link>
-            <Link to="/blogs" id="blogs" className="nav-link nav-link-ltr" >
-              Blogs
-            </Link>
+            <Link to="/blogs" id="blogs" className="nav-link nav-link-ltr" >Blogs</Link>
+            {/* <Button toLink={"/login"} text={"Login"} />
+            <Button toLink={"/sign"} text={"Sign"} /> */}
+            <div className="buttons">
+              <button onClick={() => redirect("/login")}>Login</button>
+              <button onClick={() => redirect("/sign")}>Sign Up</button>
+            </div>
           </div>
         </div>
       </nav>

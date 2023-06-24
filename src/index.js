@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-// import AlertState from './context/Alert/AlertState';
-// import AuthState from './context/Auth/AuthState';
+import AlertState from './context/Alert/AlertState';
+import AuthState from './context/Auth/AuthState';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <AlertState>
-      <AuthState> */}
-    <App />
-    {/* </AuthState>
-    </AlertState> */}
+    <AuthState>
+      <AlertState>
+        <App />
+      </AlertState>
+    </AuthState>
   </React.StrictMode>
 );

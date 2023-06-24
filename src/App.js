@@ -11,9 +11,9 @@ import {
 } from "react-router-dom";
 import ContactNewPage from "./components/ContactNewPage";
 import BackVideo from "./components/BackVideo";
-// import Alert from "./components/Alert";
-// import Login from "./components/Login";
-// import SignUp from "./components/SignUp";
+import Alert from "./components/Alert";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
     <>
       <Router>
         <NavBar />
-        {/* <Alert /> */}
         <BackVideo />
+        <Alert />
         <Routes>
           <Route exact path='/' element={
             <Home />
@@ -42,14 +42,12 @@ function App() {
           <Route exact path='/blogs' element={
             <Home />
           } />
-          {/* <Route exact path='/login' element={
+          <Route exact path='/login' element={
             <Login />
-          }>
-          </Route>
+          } />
           <Route exact path='/sign' element={
             <SignUp />
-          }>
-          </Route> */}
+          } />
         </Routes>
         <AlertState>
           <Footer />

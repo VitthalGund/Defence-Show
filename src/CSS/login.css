@@ -23,67 +23,99 @@
   color-scheme: none;
 }
 
-body {
+.login_sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_sign .container {
   display: grid;
-  min-height: 100vh;
-  font-family: "Google Sans", sans-serif, system-ui;
+  min-height: 50vh;
+  /* font-family: "Google Sans", sans-serif, system-ui; */
   place-items: center;
   overflow: hidden;
-  margin: 0;
-  background-color: var(--gray-9);
-  font-size: 1rem;
-  background-color: #1b2631;
+  background-color: var(--gray);
+  font-size: 1.5rem;
+  margin: 1.2rem;
+  margin-top: 4rem;
+  padding: 5rem;
 }
 
-form {
+.login_sign form {
   display: grid;
   position: relative;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
 }
 
-input {
+.login_sign input {
   border: 4px solid var(--color);
   border-radius: 4px;
   padding: 1rem 2rem;
   font-weight: 400;
   transition: border-color var(--transition);
+  width: 100%;
 }
-
-input#email.form-input {
-  position: relative;
-  left: 22px;
+/* 
+.login_sign input#username.form-input {
   border-radius: 15px;
 }
 
-input#email.form-input:focus {
+.login_sign input#username.form-input:focus {
   border: 5px solid #0091ff;
   outline: none;
 }
 
-input#password.form-input {
+.login_sign input#email.form-input {
   border-radius: 15px;
 }
 
-input#password.form-input:focus {
+.login_sign input#email.form-input:focus {
   border: 5px solid #0091ff;
   outline: none;
 }
 
-input:focus-visible {
+.login_sign input#password.form-input {
+  border-radius: 15px;
+}
+
+.login_sign input#password.form-input:focus {
+  border: 5px solid #0091ff;
+  outline: none;
+}
+.login_sign input#confirmPassword.form-input {
+  border-radius: 15px;
+}
+
+.login_sign input#confirmPassword.form-input:focus {
+  border: 5px solid #0091ff;
+  outline: none;
+} */
+
+.login_sign input.form-input {
+  border-radius: 15px;
+}
+
+.login_sign input.form-input:focus {
+  border: 5px solid #0091ff;
+  outline: none;
+}
+
+.login_sign input:focus-visible {
   outline-color: var(--color);
 }
 
-input::placeholder {
+.login_sign input::placeholder {
   color: transparent;
 }
 
 .form-group {
-  display: flex;
+  display: inline-block;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
-label {
+.login_sign label {
   font-family: sans-serif;
   display: flex;
   font-weight: bold;
@@ -94,7 +126,7 @@ label {
   font-size: 1.25rem;
 }
 
-button {
+.login_sign button {
   padding: 1rem 2rem;
   border-radius: 4px;
   border: 0;
@@ -156,7 +188,7 @@ form:valid [type="submit"] {
   color: var(--gray-1);
 }
 
-.form-group__input {
+.login_sign .form-group__input {
   position: relative;
 }
 
@@ -222,5 +254,12 @@ form:valid [type="submit"] {
     90% {
       transform: translateX(2%);
     }
+  }
+}
+
+@media (max-width: 710px) {
+  .login_sign .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }

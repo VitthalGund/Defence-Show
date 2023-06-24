@@ -1,15 +1,15 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 :root {
   --color-text: orange;
   --color-back: rgb(158, 114, 114);
 }
 
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   height: 0px;
   width: 0px;
-}
+} */
 /* NavBar Code */
 .nav {
   height: 55px;
@@ -39,13 +39,13 @@
 }
 
 .nav > .nav-links {
-  display: inline;
+  display: inline-flex;
   float: right;
   font-size: 18px;
 }
 
 .nav > .nav-links > a {
-  display: inline-block;
+  display: inline-flex;
   text-decoration: none;
   color: var(--color-text);
 }
@@ -80,8 +80,9 @@
 }
 
 .nav-link-ltr::before {
+  display: block;
   width: 0%;
-  bottom: 15px;
+  bottom: 12px;
 }
 
 .nav-link-ltr:hover::before {
@@ -117,7 +118,7 @@
   left: 30px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 860px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;

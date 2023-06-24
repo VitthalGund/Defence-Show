@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AlertContext from '../context/Alert/useContext';
+import "../css/alert.css"
 
 function Alert() {
     const { alert } = useContext(AlertContext);
@@ -13,9 +14,10 @@ function Alert() {
     return (
         // style={{position:'fixed',top:50,width:'100%'}} -> This code is used to show alert below navbar with scorlling
         <>
-            {alert && <div style={{ height: "3rem", top: -10, width: '100%' }} className={`alert alert-${alert.type} alert-dismissible fade show my-2`} role="alert">
+            {alert !== null ? <div className={`alert alert-${alert.type} alert-dismissible fade show my-2`}
+                style={{ height: "3.5rem", top: "50px", width: '100%', position: "sticky", zIndex: "5" }} role="alert">
                 <strong>{captalized(alert.type) + ": "}</strong>{alert.mgs}
-            </div >}
+            </div > : ""}
         </>
     )
 }

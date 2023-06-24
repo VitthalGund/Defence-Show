@@ -19,8 +19,9 @@ html {
   justify-content: center;
   align-items: center;
   width: 40rem;
-  margin-top: 3rem;
   padding: 15px;
+  margin: auto;
+  margin-top: 3rem;
 }
 
 @media (max-width: 710px) {
@@ -86,12 +87,8 @@ h6 {
 .contactUsPage input:focus {
   border-color: transparent !important;
 }
-input::-webkit-input-placeholder {
-  color: #bdbdd3;
-}
-input:-moz-placeholder {
-  color: #bdbdd3;
-}
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
 input::-moz-placeholder {
   color: #bdbdd3;
 }
@@ -115,10 +112,10 @@ input::-moz-placeholder {
 .container-contact100 {
   width: 100%;
   min-height: 70vh;
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
-  display: -ms-flexbox;
+  display: -ms-flexbox; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -200,20 +197,20 @@ input::-moz-placeholder {
   width: calc(100% + 20px);
 }
 .container-contact100-form-btn {
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
-  display: -ms-flexbox;
+  display: -ms-flexbox; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 10px;
 }
 .contact100-form-btn {
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
-  display: -ms-flexbox;
+  display: -ms-flexbox; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,7 +246,7 @@ input::-moz-placeholder {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
   border-radius: 31px;
-  background-color: #827ffe;
+  background-color: #ff6f00;
   pointer-events: none;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -257,7 +254,7 @@ input::-moz-placeholder {
   transition: all 0.4s;
 }
 .contact100-form-btn:hover:before {
-  background-color: #403866;
+  background-color: #ffa600;
   width: calc(100% + 20px);
 }
 .contactUsPage .validate-input {
