@@ -1,4 +1,3 @@
-import React from 'react'
 import video from "../source/VID/jetBackSmallest.mp4"
 import "../css/video.css"
 

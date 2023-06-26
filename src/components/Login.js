@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import "../css/login.css"
 import axios from '../api/axios';
 import AuthenticationContext from '../context/Auth/useContext';
@@ -15,7 +15,6 @@ const Login = () => {
     const navigation = useNavigate();
     const validateUserCredentails = async () => {
         try {
-            console.table(credentails);
             const response = await axios.post("/auth",
                 JSON.stringify({
                     username: credentails.username,
@@ -27,10 +26,11 @@ const Login = () => {
                     withCredentails: true
                 }
             })
-            console.log(response);
+            console.table(response);
             setAuthToken({
                 username: credentails.username,
                 password: credentails.password,
+                email: credentails.email,
                 roles: response?.data?.roles,
                 authToken: response?.data?.authToken
             });
@@ -48,6 +48,11 @@ const Login = () => {
             }
         }
     }
+
+    useEffect(() => {
+        setCredentails({ username: "Admin", email: "dnyaneshwarigund2003@gmail.com", password: "Vitthal@2005" })
+    }, [])
+    // mailjet
     //[password]:Vitthal@2005
     return (
         <>

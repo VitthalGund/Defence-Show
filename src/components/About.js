@@ -1,4 +1,3 @@
-import React from 'react'
 import "../css/about.css"
 function About() {
     document.title = "About | Defence Shorts"

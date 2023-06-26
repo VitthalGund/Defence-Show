@@ -14,8 +14,15 @@ import BackVideo from "./components/BackVideo";
 import Alert from "./components/Alert";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import User from "./components/User";
+import RequireAuth from "./components/RequireAuth";
 
 
+const ROLES = {
+  'User': 2001,
+  'Editor': 1984,
+  'Admin': 5150
+}
 function App() {
   return (
     <>
@@ -26,18 +33,14 @@ function App() {
         <Routes>
           <Route exact path='/' element={
             <Home />
-          }
-          >
-          </Route>
+          } />
           <Route exact path='/about' element={
             <About />
-          }
-          >
-          </Route>
-          <Route exact path='/contact' element={
-            <ContactNewPage />
-          }
-          >
+          } />
+          <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+            <Route exact path='/contact' element={
+              <ContactNewPage />
+            } />
           </Route>
           <Route exact path='/blogs' element={
             <Home />
@@ -48,6 +51,8 @@ function App() {
           <Route exact path='/sign' element={
             <SignUp />
           } />
+          <Route exact path="/user" element={
+            <User />} />
         </Routes>
         <AlertState>
           <Footer />

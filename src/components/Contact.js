@@ -1,4 +1,3 @@
-import React from 'react'
 import "../CSS/contact.css"
 import BackVideo from './BackVideo'
 

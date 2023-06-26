@@ -49,19 +49,6 @@
   }
 }
 
-/* Background video CSS*/
-#background-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
 body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
@@ -80,15 +67,6 @@ ul {
 
 input {
   overflow: hidden;
-}
-/* Background Video */
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 /* Form CSS */

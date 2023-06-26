@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const [credentails, setCredentails] = useState({ username: "", email: "", password: "", confirmPassword: "" });
-    const { setAuthToken } = useContext(AuthenticationContext);
+    const { setAuthToken, authToken } = useContext(AuthenticationContext);
     const { displayAlert } = useContext(AlertContext);
     const handleOnChange = (e) => {
         setCredentails({ ...credentails, [e.target.name]: e.target.value })
@@ -27,7 +27,7 @@ const SignUp = () => {
                     withCredentails: true
                 }
             })
-            console.log(response);
+            // if (response.status === 201) {
             setAuthToken({
                 username: credentails.username,
                 password: credentails.password,
@@ -36,6 +36,8 @@ const SignUp = () => {
             });
             displayAlert("Account Created Successfully!", "success");
             navigation("/");
+            // }
+            console.log(authToken)
         } catch (error) {
             if (!error?.response) {
                 displayAlert('No Server Response!', "danger");
