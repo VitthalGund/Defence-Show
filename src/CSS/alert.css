@@ -10,9 +10,9 @@
   color: inherit;
 }
 
-.alert .alert-link {
+/* .alert .alert-link {
   font-weight: bold;
-}
+} */
 
 .alert > p,
 .alert > ul {
@@ -23,7 +23,7 @@
   margin-top: 5px;
 }
 
-.alert-dismissable,
+/* .alert-dismissable,
 .alert-dismissible {
   padding-right: 35px;
 }
@@ -34,7 +34,7 @@
   top: -2px;
   right: -21px;
   color: inherit;
-}
+} */
 
 .alert-success {
   background-color: #dff0d8;

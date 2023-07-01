@@ -16,6 +16,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import User from "./components/User";
 import RequireAuth from "./components/RequireAuth";
+import PersistenLogin from "./components/PersistenLogin";
 
 
 const ROLES = {
@@ -31,28 +32,36 @@ function App() {
         <BackVideo />
         <Alert />
         <Routes>
-          <Route exact path='/' element={
-            <Home />
-          } />
-          <Route exact path='/about' element={
-            <About />
-          } />
-          <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-            <Route exact path='/contact' element={
-              <ContactNewPage />
+          <Route element={<PersistenLogin />}>
+            <Route exact path='/' element={
+              <Home />
+            } />
+
+            <Route exact path='/about' element={
+              <About />
+            } />
+
+            {/* Protected Routes */}
+            <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+              <Route exact path='/contact' element={
+                <ContactNewPage />
+              } />
+              <Route exact path="/user" element={
+                <User />
+              } />
+              <Route exact path='/blogs' element={
+                <Home />
+              } />
+            </Route>
+
+            <Route exact path='/login' element={
+              <Login />
+            } />
+
+            <Route exact path='/sign' element={
+              <SignUp />
             } />
           </Route>
-          <Route exact path='/blogs' element={
-            <Home />
-          } />
-          <Route exact path='/login' element={
-            <Login />
-          } />
-          <Route exact path='/sign' element={
-            <SignUp />
-          } />
-          <Route exact path="/user" element={
-            <User />} />
         </Routes>
         <AlertState>
           <Footer />

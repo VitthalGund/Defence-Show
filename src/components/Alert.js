@@ -12,7 +12,8 @@ function Alert() {
         return lower.charAt(0).toUpperCase() + lower.slice(1);
     }
     return (
-        // style={{position:'fixed',top:50,width:'100%'}} -> This code is used to show alert below navbar with scorlling
+        // Use the below code in partent div when navbar is stick to top
+        // style={{position:'fixed',top:50,width:'100%'}} //n-> This code is used to show alert below navbar with scorlling
         <>
             {alert !== null ? <div className={`alert alert-${alert.type} alert-dismissible fade show my-2`}
                 style={{ height: "3.5rem", top: "50px", width: '100%', position: "sticky", zIndex: "5" }} role="alert">

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [credentails, setCredentails] = useState({ username: "", email: "", password: "" });
-    const { setAuthToken } = useContext(AuthenticationContext);
+    const { setAuthToken, persist, setPersist } = useContext(AuthenticationContext);
     const { displayAlert } = useContext(AlertContext);
     const handleOnChange = (e) => {
         setCredentails({ ...credentails, [e.target.name]: e.target.value })
@@ -25,18 +25,20 @@ const Login = () => {
                     'Content-Type': "application/json",
                     withCredentails: true
                 }
-            })
-            console.table(response);
+            });
+            console.log(response.data);
             setAuthToken({
                 username: credentails.username,
                 password: credentails.password,
                 email: credentails.email,
                 roles: response?.data?.roles,
-                authToken: response?.data?.authToken
+                token: response?.data?.authToken
             });
+            document.cookie = `jwt=${response.data.refreshToken};httpOnly=true; secure=true; sameSite=None; maxAge=${24 * 60 * 60 * 1000}`;
             displayAlert("Login Successfully!", "success");
             navigation("/");
         } catch (error) {
+            console.log(error)
             if (!error?.response) {
                 displayAlert('No Server Response', "danger");
             } else if (error.response?.status === 400) {
@@ -51,7 +53,15 @@ const Login = () => {
 
     useEffect(() => {
         setCredentails({ username: "Admin", email: "dnyaneshwarigund2003@gmail.com", password: "Vitthal@2005" })
+        // eslint-disable-next-line
     }, [])
+    const togglePersist = () => {
+        setPersist(prev => !prev);
+    }
+
+    useEffect(() => {
+        localStorage.setItem("persist", persist);
+    }, [persist])
     // mailjet
     //[password]:Vitthal@2005
     return (
@@ -116,7 +126,13 @@ const Login = () => {
                                 placeholder="Enter valid password address" name='password' value={credentails.password}
                                 minLength={4} onChange={(e) => handleOnChange(e)}
                             />
-                            {/* <div className="form-group__error">Password should be more than 8 character</div> */}
+                            <div className="form-group__error">Password should be more than 8 character</div>
+                        </div>
+                        <div className="form-group__input_checkbox">
+                            <input type="checkbox" id="persist"
+                                // className='persistCheck'
+                                onChange={togglePersist} checked={persist} />
+                            <label htmlFor="persist" className='persistCheck'>Trust This Device</label>
                         </div>
                     </div>
                     <button type="submit">Login</button>

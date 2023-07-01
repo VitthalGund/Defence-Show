@@ -30,7 +30,7 @@
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 22px;
-  /* color: #fff; */
+  color: #fff;
   color: var(--color-text);
   padding: 10px 10px 10px 10px;
 }
@@ -83,14 +83,14 @@
 .nav-link-ltr::before {
   display: block;
   width: 0%;
-  bottom: 12px;
+  bottom: 15px;
 }
 
 .nav-link-ltr:hover::before {
   width: 100%;
 }
 
-.nav-link-ltr-location:before {
+.nav-link-ltr-location::before {
   width: 100%;
   color: rgb(255, 115, 0);
 }
@@ -117,10 +117,6 @@
   padding: 11px 5px 10px 0px;
   position: absolute;
   left: 30px;
-  /* flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: auto; */
 }
 
 @media (max-width: 860px) {
@@ -171,12 +167,12 @@
     overflow-y: auto;
     overflow-x: hidden;
     background-color: whitesmoke;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
+  }
+  .nav-link-ltr:hover::before,
+  .nav-link-ltr-location::before {
+    width: 0%;
   }
 }

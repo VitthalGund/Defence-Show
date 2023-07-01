@@ -26,21 +26,38 @@ const SignUp = () => {
                     'Content-Type': "application/json",
                     withCredentails: true
                 }
-            })
-            // if (response.status === 201) {
-            setAuthToken({
-                username: credentails.username,
-                password: credentails.password,
-                roles: response?.data?.roles,
-                authToken: response?.data?.authToken
             });
-            displayAlert("Account Created Successfully!", "success");
-            navigation("/");
-            // }
+            if (response.status === 201) {
+                const response1 = await axios.post("/auth",
+                    JSON.stringify({
+                        username: credentails.username,
+                        email: credentails.email,
+                        password: credentails.password
+                    }), {
+                    headers: {
+                        'Content-Type': "application/json",
+                        withCredentails: true
+                    }
+                });
+                console.log(response1);
+                setAuthToken({
+                    username: credentails.username,
+                    password: credentails.password,
+                    roles: response?.data?.roles,
+                    token: response?.data?.authToken
+                });
+                displayAlert("Account Created Successfully!", "success");
+                navigation("/");
+            }
             console.log(authToken)
         } catch (error) {
+            console.log(error.response)
             if (!error?.response) {
                 displayAlert('No Server Response!', "danger");
+            } else if (error.response?.status === 400) {
+                displayAlert('Missing Username or Password!', "danger");
+            } else if (error.response?.status === 409) {
+                displayAlert('Username or Email is already used!', "danger");
             } else if (error.response?.status === 400) {
                 displayAlert('Missing Username or Password!', "danger");
             } else if (error.response?.status === 401) {

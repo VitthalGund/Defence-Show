@@ -1,11 +1,11 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   color: #fff;
   font-family: Ubuntu-Bold, "Figtree", sans-serif;
   background: linear-gradient(0deg, #121212 0%, #1e1e1e 100%);
-}
+} */
 
 .containerScroll {
   max-width: 1440px;

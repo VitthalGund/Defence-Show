@@ -90,4 +90,5 @@ button:active:not(:focus-visible) {
   color: #ffffff;
   border: none;
   margin: 6px;
+  cursor: pointer;
 }

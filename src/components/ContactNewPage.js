@@ -1,19 +1,50 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import "../css/newContact.css";
-// import axios from '../api/axios';
-
+import axios from '../api/axios';
+import AuthenticationContext from '../context/Auth/useContext';
+import AlertContext from '../context/Alert/useContext';
 
 // https://colorlib.com/etc/cf/ContactFrom_v10/index.html
 // https://colorlib.com/etc/cf/ContactFrom_v6/index.html
 document.title = "Contact | Defence Shorts";
 function ContactNewPage() {
     const [fullName, setFullName] = useState("");
-    // const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
-    const handleContact = () => {
-        console.log("TODO:Contact");
-        // const response = axios.post("/contact", {});
+    const { authToken } = useContext(AuthenticationContext);
+    const { displayAlert } = useContext(AlertContext);
+    const handleContact = async () => {
+        try {
+            const response = await axios.post("/contact", {
+                fullName: fullName,
+                username: authToken.username,
+                email: authToken.email,
+                phoneNo: phone,
+                message: message
+            }, {
+                headers: {
+                    'Content-Type': "application/json",
+                    withCredentails: true,
+                    authorization: authToken.token
+                }
+            });
+            if (response.status === 202) {
+                displayAlert("Resposne is recorded...", "success");
+                setTimeout(() => {
+                    displayAlert("We will contact you soon with your query!", "success");
+                }, 2000);
+            }
+        } catch (error) {
+            if (!error?.response) {
+                displayAlert('No Server Response', "danger");
+            } else if (error.response?.status === 400) {
+                displayAlert('Missing Username or Password', "danger");
+            } else if (error.response?.status === 401) {
+                displayAlert('Unauthorized', "danger");
+            } else {
+                displayAlert('Request Failed', "danger");
+            }
+        }
     }
     return (
         <>
@@ -33,12 +64,6 @@ function ContactNewPage() {
                                 />
                                 <span className="focus-input100"></span>
                             </div>
-                            {/* <div className="wrap-input100 validate-input" data-validate="Please enter your email: e@a.x">
-                                <input className="input100" type="email" name="email" id="email" placeholder="E-mail"
-                                    value={email} onChange={(e) => setEmail(e.target.value)}
-                                />
-                                <span className="focus-input100"></span>
-                            </div> */}
                             <div className="wrap-input100 validate-input" data-validate="Please enter your phone">
                                 <input className="input100" type="number" name="phone" id="phone" placeholder="Phone"
                                     value={phone} onChange={(e) => { setPhone(e.target.valueAsNumber); }} minLength={8}
