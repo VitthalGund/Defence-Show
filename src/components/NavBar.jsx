@@ -14,7 +14,7 @@ export default function NavBar() {
   const { displayAlert } = useContext(AlertContext);
 
   useEffect(() => {
-    if (window.screen.width > 860) {
+    if (window.screen.width >= 860) {
       if (location.pathname === "/") {
         document.getElementById("home").classList.add("nav-link-ltr-location");
       } else if (location.pathname === "/about") {
@@ -37,7 +37,7 @@ export default function NavBar() {
           document.getElementById("blogs").classList.remove("nav-link-ltr-location");
         }
       }
-    }
+    };
   }, [location]);
   const handleLogout = async () => {
     try {
@@ -45,35 +45,39 @@ export default function NavBar() {
       if (response.status === 204) {
         setAuthToken();
         redirect("/");
-        displayAlert("Logout Successfully!", "success")
+        displayAlert("Logout Successfully!", "success");
       } else {
-        displayAlert("Unable to Logout!", "danger")
+        displayAlert("Unable to Logout!", "danger");
       }
     } catch (error) {
       if (!error?.response) {
-        displayAlert('No Server Response', "danger");
+        displayAlert("No Server Response", "danger");
       } else if (error.response?.status === 400) {
-        displayAlert('Missing Username or Password', "danger");
+        displayAlert("Missing Username or Password", "danger");
       } else if (error.response?.status === 401) {
-        displayAlert('Unauthorized', "danger");
+        displayAlert("Unauthorized", "danger");
       } else {
-        displayAlert('Request Failed', "danger");
+        displayAlert("Request Failed", "danger");
       }
     }
-  }
+  };
   return (
     <>
       <nav>
         <div className="nav">
-          <input type="checkbox" id="nav-check" />
+          <input type="checkbox" id="nav-check" name="menu" />
           <div className="nav-header">
             <div className="nav-title">
-              <img src={logo} alt="Logo" style={{
-                display: "block",
-                borderRadius: "200px",
-                width: "20%",
-                margin: "0px",
-              }} />
+              <img
+                src={logo}
+                alt="Logo"
+                style={{
+                  display: "block",
+                  borderRadius: "200px",
+                  width: "20%",
+                  margin: "0px",
+                }}
+              />
             </div>
             <div className="nav-heading nav-link" id="title">
               Defence Shorts
@@ -98,7 +102,8 @@ export default function NavBar() {
               to="https://www.youtube.com/@defenceshort1/"
               target="_blank"
               style={{ color: "red" }}
-              className="nav-link nav-link-ltr">
+              className="nav-link nav-link-ltr"
+            >
               YouTube
             </Link>
             <Link to="/contact" id="contact" className="nav-link nav-link-ltr">
@@ -115,12 +120,20 @@ export default function NavBar() {
             ) : (
               <>
                 <Link to="/user">
-                  <i className="bi bi-person-check-fill" style={{ fontSize: "30px", marginTop: "10px" }}></i>
+                  <i
+                    className="bi bi-person-check-fill"
+                    style={{ fontSize: "30px", marginTop: "10px" }}
+                  ></i>
                 </Link>
-                <button className="logout" onClick={(e) => {
-                  e.preventDefault();
-                  handleLogout();
-                }}>Logout</button>
+                <button
+                  className="logout"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLogout();
+                  }}
+                >
+                  Logout
+                </button>
               </>
             )}
           </div>
