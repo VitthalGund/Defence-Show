@@ -1,24 +1,39 @@
 import "../css/main.css"
 import ScrollVideo from './ScrollVideo';
+import { TypeAnimation } from 'react-type-animation';
 
-export default function MainPage() {
-    document.title = "Home | Defence Shorts"
+export default function Home() {
+    document.title = "Home | Defence Show";
+    // const textArray = ["I'm A Youtuber", 2000,
+    //     "Subcribe to Defence Shorts Channal", 3000,
+    //     "For Lasted Defence Updates", 3000,
+    //     "From Trusted and Authentic sources", 2000,
+    //     "Undeerstand the Complex geopolitics in Simplied language", 4000,
+    //     "Subcribe to Defence to get daily dose of Defence news", 5000
+    // ];
     return (
         <>
             <main>
                 <div className="content">
                     {/* <h2></h2> */}
-                    <p style={{ margin: "40px" }}>
-                        नमस्ते, मे Defence Show पर आपका स्वागत करता हुँ मे इस Youtube Channel पर Defence
-                        से जुडी 2-3 Videos
-                        Upload करता हूँ
-                        पहेली वीडियो का समय सुबह 9:10 बाजे दूसरी वीडियो का समय दोपहर 2:10 बजे तीसरी वीडियो का समय शाम 7:10
-                        बजे होता है तीनो ही
-                        वीडियो बहुत Simple भाषा मे होती है अगर आपको Defence Short Channel का यह प्रयास पसंद आये तो आप
-                        Channel को Subscribe करके
-                        Bell Icon को दबाए और Defence Short को Support करके Defence Short Family का Part बने
-                        धन्यवाद आपका दिन सुभ हो|
-                    </p>
+                    <div className="container">
+                        <p>Defence Show!</p>
+                        <TypeAnimation
+                            sequence={[
+                                "Hey,My Self Aakash", 2000,
+                                "I'm A Youtuber", 2000,
+                                "Subcribe to Defence Shorts Channal", 3000,
+                                "For Lasted Defence Updates", 3000,
+                                "From the Most Trusted and Authenticed sources", 2000,
+                                "Undeerstand the Complex geopolitics in Simplied language", 4000,
+                                "Subcribe to Defence to get daily dose of Defence news", 5000
+                            ]}
+                            wrapper="div"
+                            speed={50}
+                            style={{ fontSize: '1.5rem', display: 'flex' }}
+                            repeat={Infinity}
+                        />
+                    </div>
                     <ScrollVideo links="https://www.youtube.com/embed?listType=playlist&list=UUzpGkJGCGGA106WJvxzc3lQ&index=" />
                 </div>
             </main >

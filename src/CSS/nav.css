@@ -19,7 +19,7 @@
   display: block;
   top: 0;
   z-index: 5;
-  font-family: Ubuntu-Bold, "Courier New", Courier, monospace;
+  font-family: Ubuntu-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .nav > .nav-header {

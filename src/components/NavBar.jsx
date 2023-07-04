@@ -80,7 +80,7 @@ export default function NavBar() {
               />
             </div>
             <div className="nav-heading nav-link" id="title">
-              Defence Shorts
+              Defence Show
             </div>
           </div>
           <div className="nav-btn">

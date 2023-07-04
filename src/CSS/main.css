@@ -5,7 +5,7 @@ body {
   overflow-y: scroll;
   padding: 0;
   overflow-x: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Ubuntu-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   background-color: #ddd;
 }
 
@@ -17,9 +17,21 @@ body {
   margin-top: 3%;
   padding: 10px;
   text-transform: uppercase;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Ubuntu-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
-
+.content .container {
+  display: flex;
+  height: 30vh;
+  font-size: medium;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+.content .container p {
+  color: orange;
+  font-size: 3rem;
+}
 /* Style the button used to pause/play the video */
 #myBtn {
   width: 200px;

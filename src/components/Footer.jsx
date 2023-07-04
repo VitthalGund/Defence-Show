@@ -28,7 +28,7 @@ function Footer() {
       <footer>
         <div>
           <div className="column about">
-            <h2>Defence Shorts</h2>
+            <h2>Defence Show</h2>
             <p>
               नमस्ते, मे Defence Show पर आपका स्वागत करता हुँ मे इस Youtube
               Channel पर Defence से जुडी 2-3 Videos Upload करता हूँ पहेली वीडियो
