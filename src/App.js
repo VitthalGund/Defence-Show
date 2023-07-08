@@ -17,7 +17,7 @@ import SignUp from "./components/SignUp";
 import User from "./components/User";
 import RequireAuth from "./components/RequireAuth";
 import PersistenLogin from "./components/PersistenLogin";
-
+import Settings from './components/Settings';
 
 const ROLES = {
   'User': 2001,
@@ -51,6 +51,9 @@ function App() {
               } />
               <Route exact path='/blogs' element={
                 <Home />
+              } />
+              <Route exact path='/edit' element={
+                <Settings />
               } />
             </Route>
 

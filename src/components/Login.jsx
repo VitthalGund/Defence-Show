@@ -43,11 +43,7 @@ const Login = () => {
         roles: response?.data?.roles,
         token: response?.data?.authToken,
       });
-      document.cookie = `jwt=${
-        response.data.refreshToken
-      };httpOnly=true; secure=true; sameSite=None; maxAge=${
-        24 * 60 * 60 * 1000
-      }`;
+      document.cookie = `jwt=${response.data.refreshToken};maxAge=${24 * 60 * 60 * 1000}`;
       displayAlert("Login Successfully!", "success");
       navigation("/");
     } catch (error) {
@@ -63,7 +59,6 @@ const Login = () => {
       }
     }
   };
-
   useEffect(() => {
     setCredentails({
       username: "Admin",

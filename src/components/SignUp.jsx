@@ -56,6 +56,7 @@ const SignUp = () => {
           roles: response?.data?.roles,
           token: response?.data?.authToken,
         });
+        document.cookie = `jwt=${response.data.token};`;
         displayAlert("Account Created Successfully!", "success");
         navigation("/");
       }

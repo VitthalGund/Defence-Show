@@ -28,11 +28,11 @@ const PersistenLogin = () => {
     // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    console.log(`isLoading: ${isLoading}`);
-    console.log(`aT: ${JSON.stringify(authToken?.accessToken)}`);
-    // eslint-disable-next-line
-  }, [isLoading]);
+  // useEffect(() => {
+  //   console.log(`isLoading: ${isLoading}`);
+  //   console.log(`aT: ${JSON.stringify(authToken?.accessToken)}`);
+  //   // eslint-disable-next-line
+  // }, [isLoading]);
 
   return (
     <>{!persist ? <Outlet /> : isLoading ? <p>Loading...</p> : <Outlet />}</>
