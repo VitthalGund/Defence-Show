@@ -27,7 +27,7 @@ const ROLES = {
 function App() {
   return (
     <>
-      <Router>
+      <Router basename='/Defence-Show-Frontend'>
         <NavBar />
         <BackVideo />
         <Alert />

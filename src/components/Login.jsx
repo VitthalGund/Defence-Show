@@ -48,12 +48,12 @@ const Login = () => {
       navigation("/");
     } catch (error) {
       console.log(error);
-      if (!error?.response) {
-        displayAlert("No Server Response", "danger");
-      } else if (error.response?.status === 400) {
+      if (!error.response?.status === 400) {
         displayAlert("Missing Username or Password", "danger");
       } else if (error.response?.status === 401) {
         displayAlert("Unauthorized", "danger");
+      } else if (!error.response) {
+        displayAlert("Server is unavailable!", "danger");
       } else {
         displayAlert("Login Failed", "danger");
       }

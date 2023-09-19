@@ -35,14 +35,14 @@ function ContactNewPage() {
                 }, 2000);
             }
         } catch (error) {
-            if (!error?.response) {
-                displayAlert('No Server Response', "danger");
-            } else if (error.response?.status === 400) {
-                displayAlert('Missing Username or Password', "danger");
+            if (!error.response?.status === 400) {
+                displayAlert("Missing Username or Password", "danger");
             } else if (error.response?.status === 401) {
-                displayAlert('Unauthorized', "danger");
+                displayAlert("Unauthorized", "danger");
+            } else if (!error.response) {
+                displayAlert("Server is unavailable!", "danger");
             } else {
-                displayAlert('Request Failed', "danger");
+                displayAlert("Login Failed", "danger");
             }
         }
     }
