@@ -30,15 +30,13 @@
 }
 .login_sign .container {
   display: grid;
-  min-height: 50vh;
+  max-width: 75vh;
   /* font-family: "Google Sans", sans-serif, system-ui; */
   place-items: center;
   overflow: hidden;
   background-color: var(--gray);
   font-size: 1.5rem;
-  margin: 1.2rem;
-  margin-top: 4rem;
-  padding: 5rem;
+  padding: 5rem 2rem;
   color: white;
 }
 
@@ -282,7 +280,7 @@ form:valid [type="submit"] {
   }
 }
 
-@media (max-width: 710px) {
+@media (max-width: 990px) {
   .login_sign .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;

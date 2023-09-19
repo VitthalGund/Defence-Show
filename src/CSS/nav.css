@@ -15,9 +15,9 @@
   height: 60px;
   width: 100%;
   background-color: var(--color-back);
-  position: fixed;
+  /* position: fixed; */
   display: block;
-  top: 0;
+  /* top: 0; */
   z-index: 5;
   font-family: Ubuntu-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
@@ -66,6 +66,7 @@
   display: inline-block;
   position: relative;
   opacity: 0.75;
+  z-index: 10;
 }
 
 .nav-link:hover {
@@ -114,7 +115,7 @@
   display: inline-block;
   font-size: 22px;
   color: var(--color-text);
-  padding: 15px 5px 10px 0px;
+  padding: 15px 15px 10px 0px;
   position: absolute;
   left: 30px;
 }
@@ -128,7 +129,7 @@
   }
   .nav > .nav-btn > label {
     display: inline-block;
-    margin: 1px 20px;
+    margin: 1px 3px;
     width: 50px;
     height: 50px;
     padding: 13px;
@@ -170,9 +171,16 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
+    z-index: 10;
   }
   .nav-link-ltr:hover::before,
   .nav-link-ltr-location::before {
     width: 0%;
+  }
+
+  .nav-heading {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2rem;
   }
 }

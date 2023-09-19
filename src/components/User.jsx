@@ -4,34 +4,48 @@ import AlertContext from "../context/Alert/useContext";
 import AuthenticationContext from "../context/Auth/useContext";
 import "../css/user.css";
 import { useNavigate } from "react-router-dom";
+import { Buffer } from "buffer"
 import axios from "../api/axios";
-// import Card from './Card'
-// import gsap from "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
 
-//External user icons
-/* <img src="https://i.imgur.com/wvxPV9S.png" height="300" width="300" alt='User-Profile-Icon' /> */
-// https://www.learningrobo.com/p/live-editor.html
+/**
+ * React component that displays user information and allows the user to edit their profile.
+ */
 const User = () => {
   const [file, setFile] = useState(null);
   const { authToken } = useContext(AuthenticationContext);
   const { displayAlert } = useContext(AlertContext);
+  const navigation = useNavigate();
+
+  /**
+   * Copies the user's email to the clipboard and displays a success alert.
+   */
   const copyEmail = () => {
     navigator.clipboard.writeText(authToken.email);
     displayAlert("Copied to Clipboard Successfully!", "success");
   };
+
   useEffect(() => {
+    /**
+     * Fetches the user's profile image from the server.
+     */
     const fetchInfo = async () => {
-      const response = await axios.get(`/userinfo/image/${authToken.username}`, {
-        headers: {
-          "Authorization": authToken.token
-        }
-      });
-      setFile(btoa(String.fromCharCode(...new Uint8Array(response.data.resp[0].userProfileImage.data))))
-    }
+      try {
+        const response = await axios.get(`/userinfo/image/${authToken.username}`, {
+          headers: {
+            Authorization: authToken.token,
+          },
+        });
+        const imageData = response.data.resp.userProfileImage.data;
+        const base64Image = new Buffer.from(imageData).toString('base64');
+        setFile(base64Image);
+      } catch (error) {
+        console.error("Error fetching user info:", error);
+      }
+    };
+
     fetchInfo();
-    // eslint-disable-next-line
-  }, []);
-  const navigation = useNavigate()
+  }, [authToken.token, authToken.username, file]);
+
   return (
     <>
       <div className="userpage">
@@ -51,12 +65,12 @@ const User = () => {
               </h1>
             </div>
             <div className="profile-role">
-              <p>Email:</p>
+              {/* <p>
+              </p> */}
+              Email:
               {authToken.email}
               <i
-                className="bi bi-clipboard"
-                id="copy"
-                style={{ padding: "3px" }}
+                className="bi bi-clipboard copy-icon"
                 onClick={(e) => {
                   e.preventDefault();
                   copyEmail();
@@ -65,9 +79,9 @@ const User = () => {
             </div>
           </div>
           <div className="card-footer">
-            <button className="logout" onClick={() => {
-              navigation("/edit")
-            }}>Edit Profile</button>
+            <button className="logout" onClick={() => navigation("/edit")}>
+              Edit Profile
+            </button>
           </div>
         </div>
       </div>

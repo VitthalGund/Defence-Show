@@ -17,7 +17,7 @@ export default function Home() {
                 <div className="content">
                     {/* <h2></h2> */}
                     <div className="container">
-                        <p>Defence Show!</p>
+                        <h1>Defence Show!</h1>
                         <TypeAnimation
                             sequence={[
                                 "Hey,My Self Aakash", 2000,
@@ -30,7 +30,7 @@ export default function Home() {
                             ]}
                             wrapper="div"
                             speed={50}
-                            style={{ fontSize: '1.5rem', display: 'flex' }}
+                            style={{ fontSize: '1rem', display: 'flex' }}
                             repeat={Infinity}
                         />
                     </div>
