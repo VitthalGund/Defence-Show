@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Defence-Show-Frontend/static/css/main.f44daea9.css",
-    "main.js": "/Defence-Show-Frontend/static/js/main.5ed2b6f6.js",
+    "main.css": "/Defence-Show-Frontend/static/css/main.11428eda.css",
+    "main.js": "/Defence-Show-Frontend/static/js/main.9c9eecc9.js",
     "static/media/jetBackSmallest.webm": "/Defence-Show-Frontend/static/media/jetBackSmallest.09d20f992523af388199.webm",
     "static/media/ubuntu-Ubuntu-Bold.ttf": "/Defence-Show-Frontend/static/media/ubuntu-Ubuntu-Bold.995358969571c1c37362.ttf",
     "index.html": "/Defence-Show-Frontend/index.html",
-    "main.f44daea9.css.map": "/Defence-Show-Frontend/static/css/main.f44daea9.css.map",
-    "main.5ed2b6f6.js.map": "/Defence-Show-Frontend/static/js/main.5ed2b6f6.js.map"
+    "main.11428eda.css.map": "/Defence-Show-Frontend/static/css/main.11428eda.css.map",
+    "main.9c9eecc9.js.map": "/Defence-Show-Frontend/static/js/main.9c9eecc9.js.map"
   },
   "entrypoints": [
-    "static/css/main.f44daea9.css",
-    "static/js/main.5ed2b6f6.js"
+    "static/css/main.11428eda.css",
+    "static/js/main.9c9eecc9.js"
   ]
 }
