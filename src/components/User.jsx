@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 // import axios from "../api/axios";
 import AlertContext from "../context/Alert/useContext";
 import AuthenticationContext from "../context/Auth/useContext";
-import "../css/user.css";
+import "../CSS/user.css";
 import { useNavigate } from "react-router-dom";
 import { Buffer } from "buffer"
 import axios from "../api/axios";

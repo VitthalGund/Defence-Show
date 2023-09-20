@@ -1,6 +1,8 @@
-import "../css/main.css"
+import "../CSS/main.css"
+import { useContext, useEffect } from "react";
 import ScrollVideo from './ScrollVideo';
 import { TypeAnimation } from 'react-type-animation';
+import AlertContext from "../context/Alert/useContext";
 
 export default function Home() {
     document.title = "Home | Defence Show";
@@ -11,6 +13,11 @@ export default function Home() {
     //     "Undeerstand the Complex geopolitics in Simplied language", 4000,
     //     "Subcribe to Defence to get daily dose of Defence news", 5000
     // ];
+    const { displayAlert } = useContext(AlertContext);
+    useEffect(() => {
+        displayAlert("User Authentication System is off due technical issues!", "warning", 4000);
+        // eslint-disable-next-line
+    }, [])
     return (
         <>
             <main>

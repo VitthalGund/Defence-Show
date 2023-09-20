@@ -3,8 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../source/IMG/logo.jpg";
 import AuthenticationContext from "../context/Auth/useContext";
 import axios from "../api/axios";
-import "../css/button.css";
-import "../css/nav.css";
+import "../CSS/button.css";
+import "../CSS/nav.css";
 import AlertContext from "../context/Alert/useContext";
 
 export default function NavBar() {
@@ -109,7 +109,7 @@ export default function NavBar() {
             <Link to="/contact" id="contact" className="nav-link nav-link-ltr">
               Contact
             </Link>
-            <Link to="/blogs" id="blogs" className="nav-link nav-link-ltr">
+            <Link to="#" id="blogs" className="nav-link nav-link-ltr" onClick={() => { displayAlert("Will be available soon!", "info", 3000) }}>
               Blogs
             </Link>
             {!verifyLogin() ? (

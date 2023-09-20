@@ -1,4 +1,4 @@
-import "../css/settings.css";
+import "../CSS/settings.css";
 import { useContext, useEffect, useState } from "react";
 // import { Context } from "../../context/Context";
 import axios from "../api/axios";

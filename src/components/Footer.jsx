@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "../css/footer.css";
+import "../CSS/footer.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Alert from "./Alert";

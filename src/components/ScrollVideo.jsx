@@ -1,4 +1,4 @@
-import "../css/scroll.css";
+import "../CSS/scroll.css";
 
 // reference:https://codepen.io/samwong/pen/xxJMaMP
 export default function ScrollVideo() {

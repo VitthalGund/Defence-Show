@@ -1,5 +1,5 @@
 import video from "../source/VID/jetBackSmallest.webm";
-import "../css/video.css";
+import "../CSS/video.css";
 
 export default function BackVideo() {
   return (
