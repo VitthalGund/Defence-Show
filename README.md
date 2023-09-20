@@ -1,6 +1,6 @@
 # Defence Shorts Website
 
-![Defence Shorts Logo]https://github.com/VitthalGund/Defence-Shorts/blob/master/Source/IMG/logo.jpg
+![Defence Shorts Logo](https://github.com/VitthalGund/Defence-Shorts/blob/master/Source/IMG/logo.jpg)
 
 Welcome to the official repository for the Defence Shorts YouTube channel website. This project is owned and maintained by Aakash Tyagi and aims to provide an easy way for visitors to access the latest uploads from the channel and connect with the YouTuber.
 
