@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import "../css/newContact.css";
+import "../CSS/newContact.css";
 import axios from '../api/axios';
 import AuthenticationContext from '../context/Auth/useContext';
 import AlertContext from '../context/Alert/useContext';

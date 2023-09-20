@@ -15,15 +15,15 @@ import Alert from "./components/Alert";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import User from "./components/User";
-import RequireAuth from "./components/RequireAuth";
+// import RequireAuth from "./components/RequireAuth";
 import PersistenLogin from "./components/PersistenLogin";
 import Settings from './components/Settings';
 
-const ROLES = {
-  'User': 2001,
-  'Editor': 1984,
-  'Admin': 5150
-}
+// const ROLES = {
+//   'User': 2001,
+//   'Editor': 1984,
+//   'Admin': 5150
+// }
 function App() {
   return (
     <>
@@ -42,7 +42,8 @@ function App() {
             } />
 
             {/* Protected Routes */}
-            <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+            {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}> */}
+            <Route>
               <Route exact path='/contact' element={
                 <ContactNewPage />
               } />

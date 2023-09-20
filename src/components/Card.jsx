@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/card.css";
+import "../CSS/card.css";
 
 // https://codepen.io/wikyware-net/pen/dyKPRxQ?editors=1100
 const Card = ({ title, date }) => {

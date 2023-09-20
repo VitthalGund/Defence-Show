@@ -1,18 +1,19 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
-import useRefreshToken from "../hooks/useRefreshToken";
+// import useRefreshToken from "../hooks/useRefreshToken";
+import "../CSS/loading.css"
 import AuthenticationContext from "../context/Auth/useContext";
 
 const PersistenLogin = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const refresh = useRefreshToken();
+  // const refresh = useRefreshToken();
   const { authToken, persist } = useContext(AuthenticationContext);
 
   useEffect(() => {
     let isMounted = true;
     const verifyRefreshToken = async () => {
       try {
-        await refresh();
+        // await refresh();
       } catch (err) {
         console.error(err);
       } finally {
@@ -35,7 +36,7 @@ const PersistenLogin = () => {
   // }, [isLoading]);
 
   return (
-    <>{!persist ? <Outlet /> : isLoading ? <p>Loading...</p> : <Outlet />}</>
+    <>{!persist ? <Outlet /> : isLoading ? <div className="lds-facebook"><div></div><div></div><div></div></div> : <Outlet />}</>
   );
 };
 

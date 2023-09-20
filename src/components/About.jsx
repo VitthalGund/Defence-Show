@@ -1,4 +1,4 @@
-import "../css/about.css"
+import "../CSS/about.css"
 function About() {
     document.title = "About | Defence Shorts"
     return (
