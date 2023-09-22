@@ -74,8 +74,6 @@ const Login = () => {
   useEffect(() => {
     localStorage.setItem("persist", persist);
   }, [persist]);
-  // mailjet
-  //[password]:Vitthal@2005
   return (
     <>
       <div className="login_sign">
