@@ -59,7 +59,7 @@ const Login = () => {
       }
     }
   };
-  
+
   const togglePersist = () => {
     setPersist((prev) => !prev);
   };
