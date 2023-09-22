@@ -59,14 +59,7 @@ const Login = () => {
       }
     }
   };
-  useEffect(() => {
-    setCredentails({
-      username: "Admin",
-      email: "dnyaneshwarigund2003@gmail.com",
-      password: "Vitthal@2005",
-    });
-    // eslint-disable-next-line
-  }, []);
+  
   const togglePersist = () => {
     setPersist((prev) => !prev);
   };
